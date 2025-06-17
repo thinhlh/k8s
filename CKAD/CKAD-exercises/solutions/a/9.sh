@@ -1,0 +1,1 @@
+k set image -n mynamespace po nginx nginx=nginx:1.24.0

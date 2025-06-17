@@ -1,0 +1,1 @@
+k create ns myns --dry-run -o yaml > 5.yaml

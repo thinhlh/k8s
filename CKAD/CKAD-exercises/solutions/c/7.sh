@@ -1,0 +1,1 @@
+k annotate po --selector app=v2 "owner=marketing"

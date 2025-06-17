@@ -1,0 +1,1 @@
+k get po nginx1 -o custom-columns=Name:metadata.name,Annotations:metadata.annotations.description

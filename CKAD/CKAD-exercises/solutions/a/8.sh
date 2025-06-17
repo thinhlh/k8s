@@ -1,0 +1,1 @@
+k run nginx -n mynamespace --image nginx --port 80

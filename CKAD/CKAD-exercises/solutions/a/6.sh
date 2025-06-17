@@ -1,0 +1,1 @@
+k create quota myrq -n mynamespace --hard=cpu=1,memory=1G,pods=2 --dry-run -o yaml > 6.yaml

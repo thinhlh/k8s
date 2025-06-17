@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: simple-go-k8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: backend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        tier: backend
+    spec:
+      containers:
+        - image: simple-go-k8s-backend
+          name: backend
+          args:
+            - --port=$(PORT)
+            - --name=$(NAME)
+          ports:
+            - containerPort: 8081
+          env:
+            - name: PORT
+              value: "8081"
+            - name: NAME
+              value: jamie
+          imagePullPolicy: IfNotPresent
+          resources: {}
+status: {}

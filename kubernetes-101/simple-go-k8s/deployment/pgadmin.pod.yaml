@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    tier: utils
+  name: pgadmin
+  namespace: simple-go-k8s
+spec:
+  containers:
+    - image: dpage/pgadmin4
+      name: pdgadmin
+      ports:
+        - containerPort: 80
+      envFrom:
+        - secretRef:
+            name: pgadmin-secret
+      resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

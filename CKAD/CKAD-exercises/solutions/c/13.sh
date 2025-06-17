@@ -1,0 +1,1 @@
+k run nginx --image nginx --dry-run -o yaml > 13.yaml

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    type: deployment 
+spec:
+  replicas: 3
+  # Similar to pod-replicaset but with additional advantages
+  selector:
+    matchLabels:
+      type: gw
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        type: gw
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx

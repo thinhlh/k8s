@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    tier: utils
+  name: pgadmin-service
+  namespace: simple-go-k8s
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    tier: utils
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,1 @@
+k annotate nginx{1..3} description-

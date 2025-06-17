@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset
+  labels:
+    type: replication 
+spec:
+  replicas: 3
+  # Similar to pod-replication but with the use of selector
+  # Replicaset not only manage resources in the current file but also help to manage existing resource
+  # by finding match labels
+  selector:
+    matchLabels:
+      type: gw
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        type: gw
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx  

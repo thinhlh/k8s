@@ -1,0 +1,1 @@
+k run nginx --image nginx -n mynamespace -o yaml --dry-run > 2.yaml

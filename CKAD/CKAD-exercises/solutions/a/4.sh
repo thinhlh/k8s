@@ -1,0 +1,1 @@
+k run busybox -n mynamespace --image=busybox --dry-run -o yaml --restart Never --command --command -- env > 4.yaml

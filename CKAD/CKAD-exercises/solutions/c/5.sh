@@ -1,0 +1,1 @@
+k get pod --selector app=v2

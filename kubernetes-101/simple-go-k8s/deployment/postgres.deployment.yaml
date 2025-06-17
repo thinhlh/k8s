@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  namespace: simple-go-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: db
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        tier: db
+    spec:
+      containers:
+        - image: postgres
+          name: postgres
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - secretRef:
+                name: postgres-secret
+                optional: false
+          resources: {}
+          imagePullPolicy: IfNotPresent
+status: {}

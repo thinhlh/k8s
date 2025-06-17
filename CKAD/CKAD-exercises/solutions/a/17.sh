@@ -1,0 +1,1 @@
+k run -n mynamespace busybox --rm --image busybox --restart Never --command -i -- echo "hello world"

@@ -1,0 +1,1 @@
+k delete po nginx nginx{1..3}
